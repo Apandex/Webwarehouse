@@ -3,11 +3,11 @@
 include 'connection.php';
 
 // menangkap data id yang di kirim dari url
-$id = $_GET['prod_ID'];
+$id = $_GET['id'];
 
 
 // menghapus data dari database
-mysqli_query($conn, "delete from inventory where prod_ID='$id'");
+mysqli_query($conn, "delete from inventory where id='$id'");
 
 // mengalihkan halaman kembali ke index.php
 header("location:../pages/stocks.php");

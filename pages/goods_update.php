@@ -90,27 +90,32 @@
                                     <div class="col-lg-6">
                                         <?php
                                         include '../conf/connection.php';
-                                        $id = $_GET['prod_ID'];
-                                        $data = mysqli_query($conn, "select * from inventory where prod_ID='$id'");
+                                        $id = $_GET['id'];
+                                        $data = mysqli_query($conn, "select * from inventory where id='$id'");
                                         while ($d = mysqli_fetch_array($data)) {
                                         ?>
                                             <form role="form" method="post" action="../conf/doUpdate.php">
+                                            <div class="form-group">
+                                                    <label>ID</label>
+                                                    <input class="form-control" value="<?php echo $d['id']; ?>" name="id" required disabled/>
+                                                </div>
                                                 <div class="form-group">
-                                                    <label>Product ID</label>
-                                                    <input class="form-control" value="<?php echo $d['prod_ID']; ?>" name="prod_ID" required />
+                                                    <label>Product Code</label>
+                                                    <input class="form-control" value="<?php echo $d['prod_Code']; ?>" name="prod_Code" required />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Product Name</label>
                                                     <input class="form-control" value="<?php echo $d['prod_Name']; ?>" name="prod_Name" required />
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Product Description</label>
-                                                    <input class="form-control" rows="2" value="<?php echo $d['prod_Desc']; ?>" name="prod_Desc" required></input>
-                                                </div>
+                                                
 
                                     </div>
                                     <!-- /.col-lg-6 (nested) -->
                                     <div class="col-lg-6">
+                                            <div class="form-group">
+                                                    <label>Product Description</label>
+                                                    <input class="form-control" rows="2" value="<?php echo $d['prod_Desc']; ?>" name="prod_Desc" required></input>
+                                                </div>
                                         <div class="form-group">
                                             <label>Product Quantity</label>
                                             <input type="number" min="0" oninput="this.value = Math.abs(this.value)" value="<?php echo $d['prod_Qty']; ?>" class="form-control" placeholder="Enter text" name="prod_Qty" required />

@@ -92,7 +92,7 @@
                   <thead>
                     <tr>
                       <th>No.</th>
-                      <th>ID</th>
+                      <th>Code</th>
                       <th>Nama</th>
                       <th>Desc</th>
                       <th>Qty</th>
@@ -108,14 +108,14 @@
                     ?>
                       <tr>
                         <td><?php echo $no++; ?></td>
-                        <td><?php echo $d['prod_ID']; ?></td>
+                        <td><?php echo $d['prod_Code']; ?></td>
                         <td><?php echo $d['prod_Name']; ?></td>
                         <td><?php echo $d['prod_Desc']; ?></td>
                         <td><?php echo $d['prod_Qty']; ?></td>
                         <td><?php echo $d['prod_Cost']; ?></td>
                         <td>
-                          <button type="button" class="btn btn-warning btn-sm" onclick="location.href='goods_update.php?prod_ID=<?php echo $d['prod_ID']; ?>'">Edit</button>
-                          <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../conf/doDelete.php?prod_ID=<?php echo $d['prod_ID']; ?>'">Delete</button>
+                          <button type="button" class="btn btn-warning btn-sm" onclick="location.href='goods_update.php?id=<?php echo $d['id']; ?>'">Edit</button>
+                          <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../conf/doDelete.php?id=<?php echo $d['id']; ?>'">Delete</button>
                         </td>
                       </tr>
                   </tbody>

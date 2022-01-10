@@ -90,8 +90,8 @@
                                     <div class="col-lg-6">
                                         <form role="form" method="post" action="../conf/doCreate.php">
                                             <div class="form-group">
-                                                <label>Product ID</label>
-                                                <input class="form-control" placeholder="Enter Product ID" name="prod_ID" required />
+                                                <label>Product Code</label>
+                                                <input class="form-control" placeholder="Enter Product Code" name="prod_Code" required />
                                             </div>
                                             <div class="form-group">
                                                 <label>Product Name</label>
