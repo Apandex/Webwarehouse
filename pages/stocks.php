@@ -50,20 +50,26 @@
       <!-- /.navbar-top-links -->
 
       <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-          <ul class="nav" id="side-menu">
-            <li>
-              <a href="dashboard.php" class="active"><i class="fa fa-dashboard fa-fw"></i> Homepage</a>
-            </li>
-            <li>
-              <a href="stocks.php"><i class="fa fa-cube fa-fw"></i> Stocks</a>
-            </li>
-            <li>
-              <a href="goods.php"><i class="fa fa-edit fa-fw"></i> Goods</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="dashboard.php" class="active"><i class="fa fa-dashboard fa-fw"></i> Homepage</a>
+                        </li>
+                        <li>
+                            <a href="stocks.php"><i class="fa fa-cube fa-fw"></i> Stocks</a>
+                        </li>
+                        <li>
+                            <a href="goods.php"><i class="fa fa-edit fa-fw"></i> Barang Masuk</a>
+                        </li>
+                        <li>
+                            <a href="goods.php"><i class="fa fa-edit fa-fw"></i> Barang Keluar</a>
+                        </li>
+                        <li>
+                            <a href="goods.php"><i class="fa fa-edit fa-fw"></i> History</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     </nav>
 
     <div id="page-wrapper">

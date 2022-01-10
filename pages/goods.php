@@ -59,7 +59,13 @@
                             <a href="stocks.php"><i class="fa fa-cube fa-fw"></i> Stocks</a>
                         </li>
                         <li>
-                            <a href="goods.php"><i class="fa fa-edit fa-fw"></i> Goods</a>
+                            <a href="goods.php"><i class="fa fa-edit fa-fw"></i> Barang Masuk</a>
+                        </li>
+                        <li>
+                            <a href="goods.php"><i class="fa fa-edit fa-fw"></i> Barang Keluar</a>
+                        </li>
+                        <li>
+                            <a href="goods.php"><i class="fa fa-edit fa-fw"></i> History</a>
                         </li>
                     </ul>
                 </div>
