@@ -109,7 +109,7 @@
                     $setelah        = $halaman + 1;
     
                     // mengambil data dari tabel pegawai untuk ditotal
-                    $data = mysqli_query($conn, "select * from inventory");
+                    $data = mysqli_query($conn, "select * from history");
     
                     // jumlah data pegawai ditotal
                     $jumlah_data    = mysqli_num_rows($data);
