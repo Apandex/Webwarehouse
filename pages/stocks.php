@@ -139,7 +139,7 @@
                         <td><?php echo $d['prod_Cost']; ?></td>
                         <td>
                           <button type="button" class="btn btn-warning btn-sm" onclick="location.href='goods_update.php?id=<?php echo $d['id']; ?>'">Edit</button>
-                          <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../conf/doDelete.php?id=<?php echo $d['id']; ?>'">Delete</button>
+                          <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../conf/doDelete.php?id=<?php echo $d['id']?>'">Delete</button>
                         </td>
                       </tr>
                   </tbody>

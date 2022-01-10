@@ -105,7 +105,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Product Name</label>
-                                                    <input class="form-control" value="<?php echo $d['prod_Name']; ?>" name="prod_Name" required disabled/>
+                                                    <input class="form-control" value="<?php echo $d['prod_Name']; ?>" name="prod_Name" required />
                                                 </div>
                                                 
 
