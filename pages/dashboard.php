@@ -62,10 +62,10 @@
                             <a href="goods.php"><i class="fa fa-edit fa-fw"></i> Barang Masuk</a>
                         </li>
                         <li>
-                            <a href="goods.php"><i class="fa fa-edit fa-fw"></i> Barang Keluar</a>
+                            <a href="barangkeluar.php"><i class="fa fa-edit fa-fw"></i> Barang Keluar</a>
                         </li>
                         <li>
-                            <a href="goods.php"><i class="fa fa-edit fa-fw"></i> History</a>
+                            <a href="history.php"><i class="fa fa-edit fa-fw"></i> History</a>
                         </li>
                     </ul>
                 </div>

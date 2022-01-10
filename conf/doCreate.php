@@ -11,4 +11,6 @@ $harga = $_POST['prod_Cost'];
 // menginput data ke database
 mysqli_query($conn, "insert into inventory (prod_Code, prod_Name, prod_Desc, prod_Qty,prod_Cost) values('$code','$nama','$deskripsi','$jumlah','$harga')");
 
+mysqli_query($conn, "insert into history(data,date) values('Data Baru nama = $nama, deskripsi = $deskripsi, qty = $jumlah, harga = $harga', curdate() )");
+
 header("location:../pages/goods.php");

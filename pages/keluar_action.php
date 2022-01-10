@@ -76,7 +76,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Input Data</h1>
+                        <h1 class="page-header">Edit Data</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -84,38 +84,52 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">New Stocks</div>
+                            <div class="panel-heading">Edit Stocks</div>
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <form role="form" method="post" action="../conf/doCreate.php">
+                                        <?php
+                                        include '../conf/connection.php';
+                                        $id = $_GET['id'];
+                                        $data = mysqli_query($conn, "select * from inventory where id='$id'");
+                                        while ($d = mysqli_fetch_array($data)) {
+                                        ?>
+                                            <form role="form" method="post" action="../conf/doKeluar.php">
                                             <div class="form-group">
-                                                <label>Product Code</label>
-                                                <input class="form-control" placeholder="Enter Product Code" name="prod_Code" required />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Product Name</label>
-                                                <input class="form-control" placeholder="Enter Product Name" name="prod_Name" required />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Product Description</label>
-                                                <textarea class="form-control" placeholder="Enter Product Description" rows="2" name="prod_Desc" required></textarea>
-                                            </div>
+                                                    <label>ID</label>
+                                                    <input class="form-control" value="<?php echo $d['id']; ?>" name="id" required disabled/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product Code</label>
+                                                    <input class="form-control" value="<?php echo $d['prod_Code']; ?>" name="prod_Code" required disabled/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product Name</label>
+                                                    <input class="form-control" value="<?php echo $d['prod_Name']; ?>" name="prod_Name" required disabled/>
+                                                </div>
+                                                
 
                                     </div>
                                     <!-- /.col-lg-6 (nested) -->
                                     <div class="col-lg-6">
+                                            <div class="form-group">
+                                                    <label>Product Description</label>
+                                                    <input class="form-control" rows="2" value="<?php echo $d['prod_Desc']; ?>" name="prod_Desc" required disabled></input>
+                                                </div>
                                         <div class="form-group">
                                             <label>Product Quantity</label>
-                                            <input type="number" min="0" oninput="this.value = Math.abs(this.value)" placeholder="Enter Product Quantity" class="form-control" placeholder="Enter text" name="prod_Qty" required />
+                                            <input type="number" min="0" oninput="this.value = Math.abs(this.value)" value="<?php echo $d['prod_Qty']; ?>" class="form-control" placeholder="Enter text" name="prod_Qty" required />
                                         </div>
                                         <div class="form-group">
                                             <label>Product Value</label>
-                                            <input type="number" min="0" oninput="this.value = Math.abs(this.value)" placeholder="Enter Product Value" class="form-control" placeholder="Enter text" name="prod_Cost" style="margin-bottom: 40px;" required />
+                                            <input type="number" min="0" oninput="this.value = Math.abs(this.value)" value="<?php echo $d['prod_Cost']; ?>" class="form-control" placeholder="Enter text" name="prod_Cost" style="margin-bottom: 40px;" required disabled />
                                         </div>
                                         <button type="submit" class="btn btn-success btn-lg btn-block"> Submit </button>
 
                                         </form>
+                                    <?php
+                                        }
+                                    ?>
                                     </div>
                                     <!-- /.col-lg-6 (nested) -->
                                 </div>

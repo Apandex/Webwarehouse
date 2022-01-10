@@ -138,8 +138,7 @@
                         <td><?php echo $d['prod_Qty']; ?></td>
                         <td><?php echo $d['prod_Cost']; ?></td>
                         <td>
-                          <button type="button" class="btn btn-warning btn-sm" onclick="location.href='goods_update.php?id=<?php echo $d['id']; ?>'">Edit</button>
-                          <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../conf/doDelete.php?id=<?php echo $d['id']; ?>'">Delete</button>
+                          <button type="button" class="btn btn-warning btn-sm" onclick="location.href='keluar_action.php?id=<?php echo $d['id']; ?>'">Barang Keluar</button>
                         </td>
                       </tr>
                   </tbody>

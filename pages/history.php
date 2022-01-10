@@ -93,11 +93,9 @@
                   <thead>
                     <tr>
                       <th>No.</th>
-                      <th>Code</th>
-                      <th>Nama</th>
-                      <th>Desc</th>
-                      <th>Qty</th>
-                      <th>Value</th>
+                      <th>History</th>
+                      <th>Tanggal</th>
+
                     </tr>
                   </thead>
                   <tbody>
@@ -121,25 +119,22 @@
     
                     // yang ini mengambil data pengawai untuk ditampilkan dengan fungsi limit
                     // satu halaman akan ditampilkan paling banyak 10 atau limit 10
-                    $data_inven   = mysqli_query($conn, "select * from inventory limit $halaman_awal, 10");
+                    $data_his   = mysqli_query($conn, "select * from history limit $halaman_awal, 10");
     
                     // nomor digunakan untuk penomoran pada kolom no
                     // karena index dimulai dari angka 0 maka perlu ditambah 1
                     $no          = $halaman_awal + 1;
     
 
-                    while ($d = mysqli_fetch_array($data_inven)) {
+                    while ($d = mysqli_fetch_array($data_his)) {
                     ?>
                       <tr>
                         <td><?php echo $no++; ?></td>
-                        <td><?php echo $d['prod_Code']; ?></td>
-                        <td><?php echo $d['prod_Name']; ?></td>
-                        <td><?php echo $d['prod_Desc']; ?></td>
-                        <td><?php echo $d['prod_Qty']; ?></td>
-                        <td><?php echo $d['prod_Cost']; ?></td>
+                        <td><?php echo $d['data']; ?></td>
+                        <td><?php echo $d['date']; ?></td>
+
                         <td>
-                          <button type="button" class="btn btn-warning btn-sm" onclick="location.href='goods_update.php?id=<?php echo $d['id']; ?>'">Edit</button>
-                          <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../conf/doDelete.php?id=<?php echo $d['id']; ?>'">Delete</button>
+                          <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../conf/doDeletehistory.php?id=<?php echo $d['id']; ?>'">Delete</button>
                         </td>
                       </tr>
                   </tbody>
