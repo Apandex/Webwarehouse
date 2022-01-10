@@ -9,6 +9,8 @@
   <meta name="author" content="" />
 
   <title>NAHINI Warehouse</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
   <!-- Bootstrap Core CSS -->
   <link href="../css/bootstrap.min.css" rel="stylesheet" />
@@ -102,9 +104,32 @@
                   <tbody>
                     <?php
                     include '../conf/connection.php';
-                    $no = 1;
+
+              
+                    $halaman        = isset($_GET['halaman'])?(int)$_GET['halaman'] : 1;
+                    $halaman_awal   = ($halaman > 1) ? ($halaman * 10) - 10 : 0;
+                    $sebelum        = $halaman - 1;
+                    $setelah        = $halaman + 1;
+    
+                    // mengambil data dari tabel pegawai untuk ditotal
                     $data = mysqli_query($conn, "select * from inventory");
-                    while ($d = mysqli_fetch_array($data)) {
+    
+                    // jumlah data pegawai ditotal
+                    $jumlah_data    = mysqli_num_rows($data);
+    
+                    // ceil adalah fungsi pembulatan pada php
+                    $total_halaman  = ceil($jumlah_data / 10);
+    
+                    // yang ini mengambil data pengawai untuk ditampilkan dengan fungsi limit
+                    // satu halaman akan ditampilkan paling banyak 10 atau limit 10
+                    $data_inven   = mysqli_query($conn, "select * from inventory limit $halaman_awal, 10");
+    
+                    // nomor digunakan untuk penomoran pada kolom no
+                    // karena index dimulai dari angka 0 maka perlu ditambah 1
+                    $no          = $halaman_awal + 1;
+    
+
+                    while ($d = mysqli_fetch_array($data_inven)) {
                     ?>
                       <tr>
                         <td><?php echo $no++; ?></td>
@@ -123,6 +148,23 @@
                     }
                 ?>
                 </table>
+                <nav>
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" <?php if($halaman > 1){ echo "href='?halaman=$sebelum'"; } ?>>Previous</a>
+                    </li>
+                    <?php 
+                        for($x = 1; $x <= $total_halaman; $x++){
+                    ?> 
+                    <li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"> <?php echo $x; ?></a></li>
+                    <?php
+                        }
+                    ?> 
+                    <li class="page-item">
+                        <a  class="page-link" <?php  if($halaman < $total_halaman) { echo "href='?halaman=$setelah'"; } ?>>Next</a>
+                    </li>
+                </ul>
+            </nav>
 
               </div>
               <!-- /.panel-body -->
