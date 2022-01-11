@@ -97,7 +97,7 @@
                                             <form role="form" method="post" action="../conf/doKeluar.php">
                                             <div class="form-group">
                                                     <label>ID</label>
-                                                    <input class="form-control" value="<?php echo $d['id']; ?>" name="id" required disabled/>
+                                                    <input class="form-control" value="<?php echo $d['id']; ?>" name="id" required />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Product Code</label>
