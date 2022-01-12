@@ -315,12 +315,12 @@ if (isset($_SESSION['email'])) {
 
 <?php
 if (isset($_POST['submitlogin']) ) {
-   
-if ($_POST['email'] == "admin" && 
-   $_POST['password'] == "admin") {
+    $email = $_POST['email'];
+	$password = $_POST['password'];
+if ($email == "admin" &&  $password == "admin") {
 
-    $_SESSION['email'] = $row['email'];
-    $_SESSION['credential'] = $row['credential'];
+    $_SESSION['email'];
+    $_SESSION['credential'];
     header("Location: pages/dashboard.php");
     
 

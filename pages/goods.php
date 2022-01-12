@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['email'])) {
+  header("Location: ../index.php");
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +50,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="../index.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <a href="dashboard.php?logout=true"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -71,6 +79,7 @@
                 </div>
             </div>
         </nav>
+
 
         <div id="page-wrapper">
             <div class="container-fluid">
