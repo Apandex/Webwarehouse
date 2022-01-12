@@ -1,32 +1,17 @@
 <?php
 
-include 'conf/connection.php';
 
 error_reporting(0);
 
 session_start();
 
-				$email = null;
+$email = null;
 
 if (isset($_SESSION['email'])) {
 	header("Location: pages/dashboard.php");
 }
-
-if (isset($_POST['submitlogin'])) {
-	$email = $_POST['email'];
-	$password =$_POST['password'];
-
-	if ($email == "admin" && $password == "admin") {
-		$_SESSION['email'] = $row['email'];
-		$_SESSION['credential'] = $row['credential'];
-		header("Location: pages/dashboard.php");
-	} else {
-		echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
-	}
-}
-
-
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -327,3 +312,22 @@ if (isset($_POST['submitlogin'])) {
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['submitlogin']) ) {
+   
+if ($_POST['email'] == "admin" && 
+   $_POST['password'] == "admin") {
+
+    $_SESSION['email'] = $row['email'];
+    $_SESSION['credential'] = $row['credential'];
+    header("Location: pages/dashboard.php");
+    
+
+} else {
+    echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+}
+} 
+
+
+?>
