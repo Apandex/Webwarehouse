@@ -2,10 +2,11 @@
 <html lang="en">
 <style type="text/css">
     body {
-      
-      background-size: 1370px;
-   }
-   </style>
+
+        background-size: 1370px;
+    }
+</style>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -34,8 +35,10 @@
 
 <body>
     <div id="wrapper">
+
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">NAHINI Warehouse</a>
             </div>
@@ -55,6 +58,7 @@
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
+
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
@@ -79,12 +83,18 @@
 
         <div id="page-wrapper">
             <div class="container-fluid">
+
                 <div class="row">
+
                     <div class="col-lg-12">
                         <h1 class="page-header">Selamat Datang</h1>
+
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
+
+
+
             </div>
             <!-- /.container-fluid -->
         </div>
@@ -100,7 +110,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../js/startmin.js"></script>
-    
+
 </body>
 
 </html>
