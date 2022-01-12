@@ -11,14 +11,12 @@ body {
 #wrapper {
   width: 100%;
 }
-
 #page-wrapper {
   padding-top: 30px;
   min-height: 568px;
   background-image: url("../img/home.png");
   background-size: cover;
 }
-
 @media (min-width: 768px) {
   #page-wrapper {
     position: inherit;
