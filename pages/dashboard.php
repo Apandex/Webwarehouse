@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<style type="text/css">
+    body {
+      background-image: url("pages/wallpaper.png");
+      background-size: 1370px;
+   }
+   </style>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
