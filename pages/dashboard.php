@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['email'])) {
+  header("Location: ../index.php");
+} ?>
+<?php
+function Logout()
+{
+  session_start();
+  session_destroy();
+  header("Location:  ../index.php");
+}
+if (isset($_GET['logout'])) {
+  Logout();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +60,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="../index.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <a href="dashboard.php?logout=true"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -98,3 +116,4 @@
 </body>
 
 </html>
+
