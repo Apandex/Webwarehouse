@@ -1,16 +1,10 @@
-<?php
 
-session_start();
-
-if (!isset($_SESSION['email'])) {
-  header("Location: ../index.php");
-} ?>
 <?php
 function Logout()
 {
   session_start();
   session_destroy();
-  header("Location:  ../index.php");
+  header("Location: ../index.php");
 }
 if (isset($_GET['logout'])) {
   Logout();
