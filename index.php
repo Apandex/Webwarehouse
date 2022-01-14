@@ -11,7 +11,19 @@ if (isset($_SESSION['email'])) {
 	header("Location: pages/dashboard.php");
 }
 ?>
+<?php
+if (isset($_POST['submitlogin'])) {
+	$email = $_POST['email'];
+	$password = md5($_POST['password']);
 
+	if ($email == "admin" and $password="admin") {
+		$_SESSION['email'] = $email;
+		header("Location: pages/dashboard.php");
+	} else {
+		echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+	}
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -313,21 +325,3 @@ if (isset($_SESSION['email'])) {
 
 </html>
 
-<?php
-if (isset($_POST['submitlogin']) ) {
-    $email = $_POST['email'];
-	$password = $_POST['password'];
-if ($email == "admin" &&  $password == "admin") {
-
-    $_SESSION['email'];
-    $_SESSION['credential'];
-    header("Location: pages/dashboard.php");
-    
-
-} else {
-    echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
-}
-} 
-
-
-?>
