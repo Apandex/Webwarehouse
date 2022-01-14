@@ -4,7 +4,9 @@ session_start();
 
 if (!isset($_SESSION['email'])) {
   header("Location: ../index.php");
-} ?>
+}
+
+?>
 <?php
 function Logout()
 {
@@ -105,7 +107,7 @@ if (isset($_GET['logout'])) {
                 <div class="row">
 
                     <div class="col-lg-12">
-                        <h1 class="page-header">Selamat Datang</h1>
+                        <h1 class="page-header">Selamat Datang, <?php echo $_SESSION['email'] ?></h1>
 
                     </div>
                     <!-- /.col-lg-12 -->
