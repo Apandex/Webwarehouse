@@ -106,15 +106,15 @@ if (!isset($_SESSION['email'])) {
                                             <form role="form" method="post" action="../conf/doKeluar.php">
                                             <div class="form-group">
                                                     <label>ID</label>
-                                                    <input class="form-control" value="<?php echo $d['id']; ?>" name="id" required />
+                                                    <input class="form-control" value="<?php echo $d['id']; ?>" name="id" required readonly="readonly" />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Product Code</label>
-                                                    <input class="form-control" value="<?php echo $d['prod_Code']; ?>" name="prod_Code" required disabled/>
+                                                    <input class="form-control" value="<?php echo $d['prod_Code']; ?>" name="prod_Code" required readonly="readonly"/>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Product Name</label>
-                                                    <input class="form-control" value="<?php echo $d['prod_Name']; ?>" name="prod_Name" required />
+                                                    <input class="form-control" value="<?php echo $d['prod_Name']; ?>" name="prod_Name" readonly="readonly" />
                                                 </div>
                                                 
 
@@ -123,18 +123,20 @@ if (!isset($_SESSION['email'])) {
                                     <div class="col-lg-6">
                                             <div class="form-group">
                                                     <label>Product Description</label>
-                                                    <input class="form-control" rows="2" value="<?php echo $d['prod_Desc']; ?>" name="prod_Desc" required disabled></input>
+                                                    <input class="form-control" rows="2" value="<?php echo $d['prod_Desc']; ?>" name="prod_Desc" required readonly="readonly"></input>
                                                 </div>
                                         <div class="form-group">
                                             <label>Product Quantity</label>
-                                            <input type="number" min="0" oninput="this.value = Math.abs(this.value)" value="<?php echo $d['prod_Qty']; ?>" class="form-control" placeholder="Enter text" name="prod_Qty" required />
+                                            <input type="number" min="0" oninput="this.value = Math.abs(this.value)" value="1" class="form-control" placeholder="Enter text" name="Out_Qty" min="1" max ="<?php echo $d['prod_Qty']; ?>"  required />
                                         </div>
                                         <div class="form-group">
                                             <label>Product Value</label>
-                                            <input type="number" min="0" oninput="this.value = Math.abs(this.value)" value="<?php echo $d['prod_Cost']; ?>" class="form-control" placeholder="Enter text" name="prod_Cost" style="margin-bottom: 40px;" required disabled />
+                                            <input type="number" min="0" oninput="this.value = Math.abs(this.value)" value="<?php echo $d['prod_Cost']; ?>" class="form-control" placeholder="Enter text" name="prod_Cost" style="margin-bottom: 40px;" required readonly="readonly" />
                                         </div>
                                         <button type="submit" class="btn btn-success btn-lg btn-block"> Submit </button>
-
+                                        <div class="form-group">
+                                            <input type="hidden" min="0"  oninput="this.value = Math.abs(this.value)" value="<?php echo $d['prod_Qty']; ?>" class="form-control" placeholder="Enter text" name="prod_Qty"  required />
+                                        </div>
                                         </form>
                                     <?php
                                         }

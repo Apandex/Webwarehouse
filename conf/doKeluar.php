@@ -4,7 +4,8 @@ include 'connection.php';
 // menangkap data yang di kirim dari form
 $id = $_POST['id'];
 $nama = $_POST['prod_Name'];
-$jumlah = $_POST['prod_Qty'];
+$qty = $_POST['prod_Qty'];
+$jumlah =  $qty - $_POST['Out_Qty'];
 
 
 // update data ke database

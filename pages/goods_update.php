@@ -106,7 +106,7 @@ if (!isset($_SESSION['email'])) {
                                             <form role="form" method="post" action="../conf/doUpdate.php">
                                             <div class="form-group">
                                                     <label>ID</label>
-                                                    <input class="form-control" value="<?php echo $d['id']; ?>" name="id" required disabled/>
+                                                    <input class="form-control" value="<?php echo $d['id']; ?>" name="id" required readonly="readonly"/>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Product Code</label>
