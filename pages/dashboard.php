@@ -106,13 +106,14 @@ if (isset($_GET['logout'])) {
 
                     <div class="col-lg-12">
                         <h1 class="page-header">Selamat Datang</h1>
-                        <p style="margin-left: 20px; font-size:15px; font-family: Verdana, Geneva, Tahoma, sans-serif;">NahIni Warehouse Web : adalah sebuah web yang akan membantu kalian dalam melakukan <br> pengelolaan dalam warehouse ini.
+                        <p style="margin-top:20px; font-size:30px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">NahIni Warehouse Web</p>
+                        <p style="margin-left: 20px; margin-top:5px; font-size:15px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">adalah sebuah web yang akan membantu kalian dalam melakukan pengelolaan dalam <br>warehouse ini.
 Panduan penggunaan Web : <br>
 - Stock adalah  fitur yang digunakan untuk melihat stock inventory barang dan dapat update
 <br> + delete juga.<br>
 - Barang Masuk adalah menu untuk melakukan pendataan terkait barang yang masuk.<br>
 - Barang Keluar adalah menu untuk melakukan pendataan terkait barang yang keluar.<br>
-- History adalah menu dimana segala catatan transaksi bisa dilihat</p>
+- History adalah menu dimana segala catatan transaksi bisa dilihat.</p>
 
                     </div>
                     <!-- /.col-lg-12 -->
