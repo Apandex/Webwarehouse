@@ -11,32 +11,19 @@ if (isset($_SESSION['email'])) {
 	header("Location: pages/dashboard.php");
 }
 ?>
-
 <?php
-	$email = $_POST["email"];
-	$pwd = $_POST["password"]; 
+if (isset($_POST['submitlogin'])) {
+	$email = $_POST['email'];
+	$password = md5($_POST['password']);
 
-	    session_start();
-	    
-
-			if (isset($_POST['submitlogin']) ) {
-				if ($_SESSION["code"] != $_POST["kodecaptcha"]) {
-					echo "<script>alert('Captcha anda Salah!')</script>";
-				}else{
-					
-			if ($email == "admin" &&  $pwd == "admin") {
-
-
-
-				header("Location: pages/dashboard.php");
-				
-			
-			} else {
-				echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
-			}
-		}
+	if ($email == "admin" and $password="admin") {
+		$_SESSION['email'] = $email;
+		header("Location: pages/dashboard.php");
+	} else {
+		echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
 	}
-	?>
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -314,8 +301,6 @@ if (isset($_SESSION['email'])) {
 
 				<input type="text" name="email" placeholder="Username" />
 				<input type="password" name="password" placeholder="Password" />
-				<img src="pages/captcha.php" alt="gambar" />
-				<input name="kodecaptcha" value="" maxlength="5"/>
 				<button name="submitlogin">Sign In</button>
 			</form>
 		</div>
@@ -339,5 +324,3 @@ if (isset($_SESSION['email'])) {
 </body>
 
 </html>
-
-
