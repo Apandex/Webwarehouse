@@ -10,4 +10,7 @@ $id = $_GET['id'];
 mysqli_query($conn, "delete from history where id='$id'");
 
 // mengalihkan halaman kembali ke index.php
-header("location:../pages/history.php");
+echo "<script>
+alert('Rekam data telah berhasil dihapus!');
+window.location.href='../pages/history.php';
+</script>";

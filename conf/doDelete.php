@@ -12,4 +12,7 @@ mysqli_query($conn, "insert into history(data,date) values('Data Hapus nama = $n
 mysqli_query($conn, "delete from inventory where id='$id'");
 
 // mengalihkan halaman kembali ke index.php
-header("location:../pages/stocks.php");
+echo "<script>
+alert('Data telah berhasil dihapus!');
+window.location.href='../pages/stocks.php';
+</script>";

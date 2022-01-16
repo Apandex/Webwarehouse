@@ -15,4 +15,7 @@ mysqli_query($conn, "update inventory set prod_Code='$code' ,prod_Name='$nama', 
 mysqli_query($conn, "insert into history(data,date) values('Data Update  nama = $nama, deskripsi = $deskripsi, qty = $jumlah, harga = $harga', curdate() )");
 
 
-header("location:../pages/stocks.php");
+echo "<script>
+alert('Data telah berhasil diubah!');
+window.location.href='../pages/stocks.php';
+</script>";
