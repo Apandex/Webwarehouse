@@ -23,6 +23,7 @@ if (isset($_POST['submitlogin'])) {
 		echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
 	}
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -320,6 +321,7 @@ if (isset($_POST['submitlogin'])) {
 		</div>
 	</div>
 
+	
 
 </body>
 
